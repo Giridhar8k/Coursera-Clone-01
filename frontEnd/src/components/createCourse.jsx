@@ -50,7 +50,7 @@ export function CreateCourse(){
                 margin:20
             }} 
             onClick={()=>{
-                fetch('http://localhost:4000/createCourse',{
+                fetch("http://localhost:4000/createCourse",{
                     method:"POST",
                     body:JSON.stringify({
                         title:title,
@@ -58,12 +58,16 @@ export function CreateCourse(){
                         price:price
                     }),
                     headers:{
-                        "contentType":"application/json"
+                        "Content-Type":"application/json"
                     }
-                }).then(async (resp)=>{
-                const json = await resp.json();
-                alert(json);
-            })
+                })
+                .then(async (resp)=>{
+                    const json = await resp.json();
+                    alert(json);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
             }}>Create Course
         </button>
         </div>

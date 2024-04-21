@@ -58,8 +58,6 @@ app.post('/login',(req,res)=>{
 });
 
 app.post('/createCourse',(req,res)=>{
-    console.log('hitttt');
-    console.log('');
     const coursePayLoad = req.body;
 
     console.log(coursePayLoad);
